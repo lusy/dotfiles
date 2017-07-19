@@ -1,0 +1,9 @@
+[user]
+	name = lusy
+	email = 
+[color]
+	ui = true
+[core]
+	editor = vim
+[push]
+	default = current
