@@ -80,14 +80,12 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-#NVM_DIR=/home/lus/osm/osm-spline-xapi/nodejs
-#. /home/lus/osm/osm-spline-xapi/deps/nvm/nvm.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=$PATH:/usr/local/sml/bin/
-export PATH=/home/lus/.cabal/bin:$PATH
-export PATH=/home/lus/utils/anaconda/bin:$PATH
-export PATH=/home/lus/utils/sbt/bin:$PATH
-export PATH=$PATH:$HOME/projects/open_mesh/deployment
 
 export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64/bin/javac
-source /home/lus/projects/fsfe/ams/oidcp/env3/bin/activate.sh
+
+export EDITOR=vim
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
