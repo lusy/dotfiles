@@ -1,40 +1,33 @@
-execute pathogen#infect()
-"call pathogen#helptags()
-"call pathogen#runtime_append_all_bundles()
+" enable syntax highlighting
+syntax enable
+set background=dark
+colorscheme elflord
 
-" General stuff
-syntax on
+" show line numbers
 set number
-"set background=dark
-set background=light
-"colorscheme slate
-colorscheme desert
 
-" White spaces
-set tabstop=4
+" set tabs to 4 spaces
+set ts=4
 set shiftwidth=4
+
+" expand tabs into spaces
 set expandtab
 set smarttab
 
-" Indentation
-set smartindent
+" indent when moving to the next line while writing code
 set autoindent
-filetype plugin indent on
+set smartindent
 
-if has("autocmd")
-    autocmd bufwritepost index.Rmd !./make.r
-endif
+" enable pathogen
+execute pathogen#infect()
 
-autocmd FileType javascript map <F5> :w<CR>:!node "%"<CR>
-autocmd FileType python map <F5> :w<CR>:!python "%"<CR>
-autocmd FileType r map <F5> :w<CR>:!Rscript "%"<CR>
-autocmd FileType llvm  map <F5> :w<CR>:!lli "%"<CR>
-autocmd FileType haskell  map <F5> :w<CR>:!ghci "%"<CR>
+au! BufRead,BufNewFile *.htm,*.html,*.js,*.ts,*.css,*.less setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
-" save vim history
-set undofile
-set undodir=/tmp
-
-augroup filetype
-  au! BufRead, BufNewFile *.ll set filetype=llvm
-augroup END
+au! BufNewFile,BufRead *.py
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    set textwidth=79
+    set expandtab
+    set autoindent
+    set fileformat=unix
